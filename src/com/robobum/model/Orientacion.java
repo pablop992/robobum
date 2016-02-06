@@ -7,11 +7,23 @@ public enum Orientacion {
 	ORIENTE("E"),
 	OCCIDENTE("W");
 	
-	String abreviacionInglesa;
+	String abreviacion;
 	
-	private Orientacion(String abreviacionInglesa){
-		this.abreviacionInglesa = abreviacionInglesa;
+	private Orientacion(String abreviacion){
+		this.abreviacion = abreviacion;
 	}
 	
-	public static Orientacion
+	public static Orientacion obtenerOrientacionPorAbreviacion(String abreviacion){
+		for(Orientacion ort : Orientacion.values()){
+			if(ort.getAbreviacion().equals(abreviacion))
+				return ort;
+		}
+		return null;
+	}
+
+	public String getAbreviacion() {
+		return abreviacion;
+	}
+	
+	
 }
